@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/*
+ * テーマ: Bootstrap 5
+ *
+ * 生の色はこのファイルだけに置く。@theme の役割名は Tailwind のユーティリティ
+ * (bg-surface / text-accent など) になり、エンジンの --fs-* も同じ名前から引く。
+ */
+
+@theme {
+  /* 値は Bootstrap 5 のパレット */
+  --color-surface: #ffffff; /* white */
+  --color-ink: #212529; /* gray-900 / dark */
+  --color-muted: #6c757d; /* gray-600 */
+  --color-line: #dee2e6; /* gray-300 */
+  --color-accent: #0d6efd; /* blue */
+  --color-accent-strong: #0a58ca; /* blue-600 */
+  --color-accent-alt: #6610f2; /* indigo */
+  --color-code: #d63384; /* pink */
+  --color-code-surface: #f8f9fa; /* light */
+  --color-inverted: #212529; /* dark */
+  --color-inverted-ink: #f8f9fa; /* light */
+
+  --font-sans:
+    system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans JP",
+    sans-serif;
+}
+
+/* エンジン — flow-slide-engine の --fs-* も同じ役割名から引く */
+:root {
+  --fs-background: var(--color-surface);
+  --fs-foreground: var(--color-ink);
+  --fs-letterbox: var(--color-inverted);
+  --fs-font-size: 1.5rem;
+
+  --fs-furniture-background: var(--color-inverted);
+  --fs-furniture-foreground: var(--color-inverted-ink);
+  --fs-progress-track: var(--color-line);
+  --fs-progress-fill: var(--color-accent);
+
+  --fs-thumbnail-outline: 1px solid var(--color-line);
+  --fs-thumbnail-current-outline: 2px solid var(--color-accent);
+  --fs-thumbnail-number-color: var(--color-muted);
+  --fs-resizer-color: var(--color-line);
+}
