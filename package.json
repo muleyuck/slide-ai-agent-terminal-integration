@@ -1,5 +1,5 @@
 {
-  "name": "slide-sandbox",
+  "name": "slide-ai-agent-terminal-integration",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,7 @@
     "typecheck": "tsc -b --noEmit"
   },
   "dependencies": {
-    "flow-slide-engine": "file:./vendor/flow-slide-engine-0.3.0.tgz",
+    "flow-slide-engine": "file:./vendor/flow-slide-engine-0.4.0.tgz",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
