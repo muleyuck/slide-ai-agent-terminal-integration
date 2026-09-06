@@ -1,0 +1,20 @@
+name: deploy-pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: muleyuck/github-actions/.github/workflows/deploy-pages-node-pnpm.yml@v1
