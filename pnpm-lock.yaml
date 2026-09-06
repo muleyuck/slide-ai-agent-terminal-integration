@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       flow-slide-engine:
-        specifier: file:./vendor/flow-slide-engine-0.4.0.tgz
-        version: file:vendor/flow-slide-engine-0.4.0.tgz(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        specifier: file:./vendor/flow-slide-engine-0.4.1.tgz
+        version: file:vendor/flow-slide-engine-0.4.1.tgz(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       react:
         specifier: ^19.2.8
         version: 19.2.8
@@ -349,9 +349,9 @@ packages:
       picomatch:
         optional: true
 
-  flow-slide-engine@file:vendor/flow-slide-engine-0.4.0.tgz:
-    resolution: {integrity: sha512-xJD+AepXeZ33Ky2sYEFVJIbrrHQJ0ViyBmKQkQYOr9gJO/7eze+4PQtT++Prtq0TxqamkOO9tygvsJFzXIDtTA==, tarball: file:vendor/flow-slide-engine-0.4.0.tgz}
-    version: 0.4.0
+  flow-slide-engine@file:vendor/flow-slide-engine-0.4.1.tgz:
+    resolution: {integrity: sha512-CHpc4o6L2DkzJz3zK0EBlLsyp23sdiqReAbppApVZ3pD3qTVEuQHZdQCDOwvuFEW/Nr75AGiOm69UNUjtjdvEw==, tarball: file:vendor/flow-slide-engine-0.4.1.tgz}
+    version: 0.4.1
     peerDependencies:
       react: ^19
       react-dom: ^19
@@ -811,7 +811,7 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.5
 
-  flow-slide-engine@file:vendor/flow-slide-engine-0.4.0.tgz(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
+  flow-slide-engine@file:vendor/flow-slide-engine-0.4.1.tgz(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
