@@ -20,7 +20,7 @@ export function CurrentSetupSlide(props: SlideProps) {
           <span className="font-bold text-accent">左 — タブ一覧</span>
           <br />
           <span className="font-semibold text-base">
-            今いるworkspaceの中身。エディタやAIエージェント等のタブが並ぶ
+            今いるworkspaceの中身。エディタやAIエージェントなどのタブが並ぶ
           </span>
         </p>
         <p className="flex-1 text-end">
@@ -32,10 +32,10 @@ export function CurrentSetupSlide(props: SlideProps) {
 
       <Step>
         <Takeaway className="mt-5">
-          herdrはWorkspaceの表示機能を持たない。ただ、タブバーに任意の文字列を差し込めるのでcmuxで欲しかった場所に
+          herdrはworkspaceの表示機能を持ちません。ただ、タブバーに任意の文字列を差し込めるので、cmuxで欲しかった場所に
           <br />
           <span className="font-bold text-accent-strong">シェルスクリプト</span>
-          でWorkspace一覧を表示しました。
+          でworkspace一覧を表示しました。
         </Takeaway>
       </Step>
     </Slide>

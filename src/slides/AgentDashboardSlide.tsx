@@ -14,14 +14,14 @@ export function AgentDashboardSlide(props: SlideProps) {
         className="mb-5 w-full rounded-sm border border-line"
       />
       <Takeaway>
-        herdrのサイドバーでエージェントの状況は表示されますが、サイドバーは表示せず
+        herdrのサイドバーにエージェントの状況が表示されますが、サイドバーは表示せず
         <span className="space-x-1 px-1">
           <Key symbol={true}>⌘</Key>
           <Key>P</Key>
         </span>
         のpopupに置き換えました。
         <br />
-        <Code>herdr agent list</Code>をfzfに流す簡単のスクリプトで達成できました。
+        <Code>herdr agent list</Code>をfzfに流す簡単なスクリプトで達成できました。
       </Takeaway>
     </Slide>
   )

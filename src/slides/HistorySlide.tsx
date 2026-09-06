@@ -18,7 +18,7 @@ type Stop = {
 }
 
 const HISTORY: Stop[] = [
-  { tool: "ghostty + tmux", date: "〜2026.03", move: ["cmuxで全部できると", "期待して移行した"] },
+  { tool: "ghostty + tmux", date: "〜2026.03", move: ["cmuxで全部できると", "期待した"] },
   {
     tool: "cmux",
     date: "2026.03",
@@ -30,7 +30,7 @@ const HISTORY: Stop[] = [
     tool: "WezTerm",
     date: "2026.07",
     abandoned: true,
-    move: ["複数セッションが動き", "エージェントの一覧が欲しい"],
+    move: ["複数セッションが動くので", "エージェントの一覧が欲しい"],
   },
   { tool: "ghostty + herdr", date: "2026.08〜" },
 ]
@@ -74,7 +74,7 @@ export function HistorySlide(props: SlideProps) {
                 </p>
                 <p className="text-lg text-muted">{s.date}</p>
                 {s.abandoned && (
-                  <p className="mt-1 font-bold text-code text-lg">一時的な利用に留まる</p>
+                  <p className="mt-1 font-bold text-code text-lg">一時的な利用に留まった</p>
                 )}
               </div>
             </div>
@@ -84,7 +84,7 @@ export function HistorySlide(props: SlideProps) {
 
       <Step>
         <Takeaway className="mt-16">
-          乗り換えた理由は毎回違いますが、要求は常に同じでした。構成のシンプルさを追い求め紆余曲折しました。
+          乗り換えた理由は毎回違いますが、要求は常に同じでした。構成のシンプルさを追い求めて、紆余曲折がありました。
           <br />
           ③の「今どこにいるか」は、tmuxもcmuxも標準で持っていました。違ったのは
           <span className="font-bold text-accent-strong">どこに出すかを自分で決められるか</span>

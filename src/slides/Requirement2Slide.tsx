@@ -130,12 +130,12 @@ export function Requirement2Slide(props: SlideProps) {
       <Step className="mt-12">
         <Takeaway className="mt-6">
           <span className="font-bold text-code">
-            承認待ちのセッションは見ている画面上には描画されず気づきにくい。通知も見逃しがち。
+            承認待ちのセッションは見ている画面には表示されず気づきにくく、通知も見逃しがちです。
           </span>
           <br />
           ここで
           <span className="font-bold text-accent-strong">
-            要求② 「動いているエージェントの状況が一覧で見えること」
+            要求② 「動いているエージェントの状況を一覧で見たい」
           </span>
           が新たに必要になりました。
         </Takeaway>

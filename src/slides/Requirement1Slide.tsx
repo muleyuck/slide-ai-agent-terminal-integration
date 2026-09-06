@@ -77,7 +77,7 @@ function Workspace({ name, sessions }: { name: string; sessions: [string, string
 const REQUIREMENT1_WANTS = [
   {
     no: "① ",
-    title: "プロジェクト単位に束ねる",
+    title: "プロジェクト単位で束ねる",
     text: "ディレクトリを固定したセッションをまとめたい",
   },
   { no: "② ", title: "一発で飛ぶ", text: "エディタとAIを1日に何十回も往復する" },
@@ -140,7 +140,7 @@ export function Requirement1Slide(props: SlideProps) {
         <Takeaway className="mt-8">
           ① ② は
           <span className="font-semibold text-muted">
-            大抵のターミナルやマルチプレクサで実現できます。③も多くが持ちますが、
+            大抵のターミナルやマルチプレクサで実現でき、③も多くのツールが持ちますが、
           </span>
           <span className="font-bold text-accent-strong">どこに出すかはツールが決めます。</span>
         </Takeaway>

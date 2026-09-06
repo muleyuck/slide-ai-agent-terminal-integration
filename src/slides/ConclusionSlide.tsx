@@ -13,7 +13,7 @@ const STACK = [
 /** この資料で触れていくターミナル環境の要求事項 */
 const WANTS = [
   { label: "要求①", text: "プロジェクトごとに束ねて、迷わず行き来したい" },
-  { label: "要求②", text: "動いているエージェントの状況が一覧で見えてほしい" },
+  { label: "要求②", text: "動いているエージェントの状況を一覧で見たい" },
 ]
 
 export function ConclusionSlide(props: SlideProps) {
