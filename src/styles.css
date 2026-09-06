@@ -1,45 +1,83 @@
 @import "tailwindcss";
 
 /*
- * テーマ: Bootstrap 5
- *
- * 生の色はこのファイルだけに置く。@theme の役割名は Tailwind のユーティリティ
- * (bg-surface / text-accent など) になり、エンジンの --fs-* も同じ名前から引く。
+ * テーマ: Nord ベース。アイコン (public/muleyuck.png) の実測色 ティール #00adb4 /
+ * ブルー #204daa / オフホワイト #e0e8e4 とは被らせず、同じ色相帯にある Frost を軸にする。
+ * Nord は本来ダークテーマなので、文字・罫線になる色は原色を暗く落としてある。
+ * 背景も純白ではなく Snow Storm にして面をフラットに見せる。
+ * 生の色はこのファイルだけに置き、他は @theme の役割名から引く。
  */
 
 @theme {
-  /* 値は Bootstrap 5 のパレット */
-  --color-surface: #ffffff; /* white */
-  --color-ink: #212529; /* gray-900 / dark */
-  --color-muted: #6c757d; /* gray-600 */
-  --color-line: #dee2e6; /* gray-300 */
-  --color-accent: #0d6efd; /* blue */
-  --color-accent-strong: #0a58ca; /* blue-600 */
-  --color-accent-alt: #6610f2; /* indigo */
-  --color-code: #d63384; /* pink */
-  --color-code-surface: #f8f9fa; /* light */
-  --color-inverted: #212529; /* dark */
-  --color-inverted-ink: #f8f9fa; /* light */
+  --color-surface: #eceff4;
+  /* nord6 Snow Storm */
+  --color-ink: #2e3440;
+  /* nord0 Polar Night */
+  --color-muted: #4c566a;
+  /* nord3 Polar Night */
+  --color-line: #d8dee9;
+  /* nord4 Snow Storm */
+  --color-accent: #4c6a8c;
+  /* nord10 #5e81ac を暗く。アイコンの青側に対応 */
+  --color-accent-strong: #3f5b7d;
+  /* 見出し用にさらに暗く */
+  --color-accent-bright: #88c0d0;
+  /* nord8 Frost。暗いオーバービュー面で選択枠を目立たせる */
+  --color-accent-alt: #2e3440;
+  /* nord0。グラデーション終端を Polar Night に落とす */
+  --color-code: #a04a53;
+  /* nord11 Aurora #bf616a を暗く */
+  --color-code-surface: #e5e9f0;
+  /* nord5 Snow Storm */
+  --color-inverted: #2e3440;
+  /* nord0。レターボックス / 反転面 */
+  --color-inverted-ink: #e5e9f0;
+  /* nord5 */
+
+  --font-mono:
+    "HackGen Console NF", "Symbols Nerd Font", ui-monospace, SFMono-Regular,
+    monospace;
 
   --font-sans:
     system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans JP",
     sans-serif;
 }
 
-/* エンジン — flow-slide-engine の --fs-* も同じ役割名から引く */
+/* flow-slide-engine 側の変数 */
 :root {
   --fs-background: var(--color-surface);
   --fs-foreground: var(--color-ink);
   --fs-letterbox: var(--color-inverted);
   --fs-font-size: 1.5rem;
+  /* 見出しは kicker と組にして使うので、既定の 2.33em (56px) から落とす。 */
+  --fs-title-size: 1.7em;
+  --fs-title-gap: 0.3em;
+  /* 既定の 4rem は下半分が空きやすい。中身に面を使う。 */
+  --fs-slide-padding: 3rem;
 
   --fs-furniture-background: var(--color-inverted);
   --fs-furniture-foreground: var(--color-inverted-ink);
   --fs-progress-track: var(--color-line);
   --fs-progress-fill: var(--color-accent);
 
-  --fs-thumbnail-outline: 1px solid var(--color-line);
-  --fs-thumbnail-current-outline: 2px solid var(--color-accent);
+  --fs-thumbnail-outline: 1px solid var(--color-muted);
+  --fs-thumbnail-current-outline: 2px solid var(--color-accent-bright);
   --fs-thumbnail-number-color: var(--color-muted);
   --fs-resizer-color: var(--color-line);
+}
+
+/*
+ * Tailwind の text-* は @layer utilities に入るので、レイヤーなしの .fs-title には勝てない。
+ * 表紙の見出しだけ大きくしたいので、サイズはここで与える。
+ */
+.fs-slide[data-cover="lead"] .fs-title {
+  font-size: 2.4em;
+}
+
+/*
+ * --fs-title-gap は表紙の見出しとサブタイトルの間隔に合わせてあるので、
+ * 中身のスライドはここで別に間隔を取る。
+ */
+.fs-slide:not([data-cover]) .fs-title {
+  margin-bottom: 0.8em;
 }
