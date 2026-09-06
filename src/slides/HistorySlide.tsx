@@ -19,9 +19,19 @@ type Stop = {
 
 const HISTORY: Stop[] = [
   { tool: "ghostty + tmux", date: "〜2026.03", move: ["cmuxで全部できると", "期待して移行した"] },
-  { tool: "cmux", date: "2026.03", abandoned: true, move: ["サイドバー固定で", "自分好みのUI/UXにできない"] },
+  {
+    tool: "cmux",
+    date: "2026.03",
+    abandoned: true,
+    move: ["サイドバー固定で", "自分好みのUI/UXにできない"],
+  },
   { tool: "ghostty + tmux", date: "に戻る", move: ["tmux無しで", "プロジェクトを束ねたい"] },
-  { tool: "WezTerm", date: "2026.07", abandoned: true, move: ["複数セッションが動き", "エージェントの一覧が欲しい"] },
+  {
+    tool: "WezTerm",
+    date: "2026.07",
+    abandoned: true,
+    move: ["複数セッションが動き", "エージェントの一覧が欲しい"],
+  },
   { tool: "ghostty + herdr", date: "2026.08〜" },
 ]
 
@@ -29,15 +39,13 @@ export function HistorySlide(props: SlideProps) {
   return (
     <Slide {...props}>
       <Kicker>History ／ 乗り換えの履歴</Kicker>
-      <Title className="font-bold text-accent-strong">
-        より良いターミナル環境を求めて
-      </Title>
+      <Title className="font-bold text-accent-strong">より良いターミナル環境を求めて</Title>
 
       {/* 理由は線の上。5 点を 10% ずつ内側に寄せると、4 つの区間の中心に並ぶ。 */}
       <div className="flex items-end px-[9%] pt-14">
         {HISTORY.flatMap((s) => (s.move ? [s.move] : [])).map(([head, tail]) => (
           <div key={head} className="flex flex-1 flex-col items-center">
-            <p className="text-center text-lg leading-snug font-bold text-accent-strong">
+            <p className="text-center font-bold text-accent-strong text-lg leading-snug">
               {head}
               <br />
               {tail}
@@ -52,20 +60,22 @@ export function HistorySlide(props: SlideProps) {
         {/* 右端の矢じりで、線が時間の流れであることを出す。 */}
         <div className="absolute inset-x-0 top-3.5 flex -translate-y-1/2 items-center">
           <div className="h-1.5 flex-1 bg-accent" />
-          <span className="block size-0 border-y-[9px] border-l-[14px] border-y-transparent border-l-accent" />
+          <span className="block size-0 border-y-[9px] border-y-transparent border-l-[14px] border-l-accent" />
         </div>
         <div className="flex items-start">
-          {HISTORY.map((s, i) => (
-            <div key={`${s.tool}${i}`} className="flex flex-1 flex-col items-center">
+          {HISTORY.map((s) => (
+            <div key={`${s.tool}:${s.date}`} className="flex flex-1 flex-col items-center">
               <div
                 className={`relative size-7 rounded-full border-3 ${s.abandoned ? "border-muted/80 bg-surface" : "border-accent bg-accent"}`}
               />
               <div className="pt-6 text-center">
-                <p className={`text-xl leading-tight font-bold ${s.abandoned ? "text-muted" : ""}`}>
+                <p className={`font-bold text-xl leading-tight ${s.abandoned ? "text-muted" : ""}`}>
                   {s.tool}
                 </p>
                 <p className="text-lg text-muted">{s.date}</p>
-                {s.abandoned && <p className="mt-1 text-lg font-bold text-code">一時的な利用に留まる</p>}
+                {s.abandoned && (
+                  <p className="mt-1 font-bold text-code text-lg">一時的な利用に留まる</p>
+                )}
               </div>
             </div>
           ))}
@@ -77,9 +87,7 @@ export function HistorySlide(props: SlideProps) {
           乗り換えた理由は毎回違いますが、要求は常に同じでした。構成のシンプルさを追い求め紆余曲折しました。
           <br />
           ③の「今どこにいるか」は、tmuxもcmuxも標準で持っていました。違ったのは
-          <span className="font-bold text-accent-strong">
-            どこに出すかを自分で決められるか
-          </span>
+          <span className="font-bold text-accent-strong">どこに出すかを自分で決められるか</span>
           です。
         </Takeaway>
       </Step>

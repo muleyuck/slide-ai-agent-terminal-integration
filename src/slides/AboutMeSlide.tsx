@@ -7,7 +7,7 @@ import { Code, Kicker } from "../components/typography"
 function Row({ label, children }: { label: string; children: ReactNode }) {
   return (
     <div className="mb-8 flex last:mb-0">
-      <dt className="w-32 shrink-0 text-lg font-bold tracking-wider text-accent">{label}</dt>
+      <dt className="w-32 shrink-0 font-bold text-accent text-lg tracking-wider">{label}</dt>
       <dd className="flex-1 text-xl leading-relaxed">{children}</dd>
     </div>
   )

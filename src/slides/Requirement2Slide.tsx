@@ -47,12 +47,13 @@ function AgentBox({ name, state }: Agent) {
   const strong = state === "blocked"
   return (
     <span
-      className={`flex shrink-0 items-center rounded-sm border px-4 py-2 whitespace-nowrap ${strong ? "border-code bg-code/10" : "border-line bg-surface"
-        }`}
+      className={`flex shrink-0 items-center whitespace-nowrap rounded-sm border px-4 py-2 ${
+        strong ? "border-code bg-code/10" : "border-line bg-surface"
+      }`}
     >
-      <span className="font-mono text-lg text-ink pr-2.5">{name}</span>
+      <span className="pr-2.5 font-mono text-ink text-lg">{name}</span>
       <Icon className={`size-4 ${tone}`} />
-      <span className={`text-base font-bold ${tone}`}>{label}</span>
+      <span className={`font-bold text-base ${tone}`}>{label}</span>
     </span>
   )
 }
@@ -61,7 +62,9 @@ function AgentBox({ name, state }: Agent) {
 function Project({ name, agents }: { name: string; agents: Agent[] }) {
   return (
     <div className="flex items-center gap-4 rounded-sm border border-line bg-code-surface px-5 py-3">
-      <p className="w-28 shrink-0 font-mono text-base font-bold tracking-wider text-accent">{name}</p>
+      <p className="w-28 shrink-0 font-bold font-mono text-accent text-base tracking-wider">
+        {name}
+      </p>
       <div className="flex gap-3">
         {agents.map((a) => (
           <AgentBox key={a.name + a.state} {...a} />
@@ -96,7 +99,7 @@ export function Requirement2Slide(props: SlideProps) {
       <Kicker>要求② ／ AI以後</Kicker>
       <Title className="font-bold text-accent-strong">AI時代の到来で要求がもう1つ増えた</Title>
 
-      <div className="flex gap-6 mt-12">
+      <div className="mt-12 flex gap-6">
         <div className="flex w-40 shrink-0 items-start justify-center pt-10">
           <AvatarBubble size="size-28" iconSize="size-14" label="どれが待ってる？" />
         </div>
@@ -104,15 +107,15 @@ export function Requirement2Slide(props: SlideProps) {
         <div className="flex flex-1 flex-col gap-4">
           {/* 自分が画面上で見えているプロセスを表現 */}
           <div className="relative rounded-sm border-2 border-accent px-4 pt-5 pb-4">
-            <span className="absolute -top-3 left-4 bg-surface px-2 text-base font-bold text-accent">
+            <span className="absolute -top-3 left-4 bg-surface px-2 font-bold text-accent text-base">
               画面で同時に見えるものは限られる
             </span>
             <Project name={ON_SCREEN.name} agents={[...ON_SCREEN.agents]} />
           </div>
 
           {/* バックグラウンドで動いているプロセスを表現 */}
-          <div className="relative rounded-sm border border-dashed border-muted/40 px-4 pt-5 pb-4">
-            <span className="absolute -top-3 left-4 bg-surface px-2 text-base font-bold text-muted">
+          <div className="relative rounded-sm border border-muted/40 border-dashed px-4 pt-5 pb-4">
+            <span className="absolute -top-3 left-4 bg-surface px-2 font-bold text-base text-muted">
               残りは裏で動いている
             </span>
             <div className="flex flex-col gap-3 opacity-55">
@@ -126,7 +129,9 @@ export function Requirement2Slide(props: SlideProps) {
 
       <Step className="mt-12">
         <Takeaway className="mt-6">
-          <span className="font-bold text-code">承認待ちのセッションは見ている画面上には描画されず気づきにくい。通知も見逃しがち。</span>
+          <span className="font-bold text-code">
+            承認待ちのセッションは見ている画面上には描画されず気づきにくい。通知も見逃しがち。
+          </span>
           <br />
           ここで
           <span className="font-bold text-accent-strong">

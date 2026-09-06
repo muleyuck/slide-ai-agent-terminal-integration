@@ -13,7 +13,13 @@ export function Avatar({ className = "" }: { className?: string }) {
 }
 
 export function AppIcon({ className = "" }: { className?: string }) {
-  return <img src={asset("terminal-agents-icon.png")} alt="アプリケーションアイコン" className={className} />
+  return (
+    <img
+      src={asset("terminal-agents-icon.png")}
+      alt="アプリケーションアイコン"
+      className={className}
+    />
+  )
 }
 
 /**
@@ -34,7 +40,7 @@ export function CoverSlide({
 }) {
   return (
     <Slide {...props} data-cover={cover} className={COVER}>
-      <p className="mb-4 text-base font-bold tracking-widest text-surface/70 uppercase">{label}</p>
+      <p className="mb-4 font-bold text-base text-surface/70 uppercase tracking-widest">{label}</p>
       {children}
       <AppIcon className={`absolute right-12 bottom-12 ${iconSize}`} />
     </Slide>

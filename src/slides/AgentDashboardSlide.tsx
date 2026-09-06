@@ -15,7 +15,7 @@ export function AgentDashboardSlide(props: SlideProps) {
       />
       <Takeaway>
         herdrのサイドバーでエージェントの状況は表示されますが、サイドバーは表示せず
-        <span className="px-1 space-x-1">
+        <span className="space-x-1 px-1">
           <Key symbol={true}>⌘</Key>
           <Key>P</Key>
         </span>

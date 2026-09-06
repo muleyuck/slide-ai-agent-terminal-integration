@@ -7,9 +7,7 @@ export function CurrentSetupSlide(props: SlideProps) {
   return (
     <Slide {...props}>
       <Kicker>要求①への答え ／ 常時表示</Kicker>
-      <Title className="font-bold text-accent-strong">
-        「どこに出すか」を自分で決める
-      </Title>
+      <Title className="font-bold text-accent-strong">「どこに出すか」を自分で決める</Title>
 
       <img
         src={asset("tab-bar.png")}
@@ -17,11 +15,13 @@ export function CurrentSetupSlide(props: SlideProps) {
         className="w-full rounded-sm border border-line"
       />
 
-      <div className="px-2 mt-5 flex gap-10 text-lg leading-relaxed border border-line pb-8 pt-1 rounded-md">
+      <div className="mt-5 flex gap-10 rounded-md border border-line px-2 pt-1 pb-8 text-lg leading-relaxed">
         <p className="flex-1 font-semibold">
           <span className="font-bold text-accent">左 — タブ一覧</span>
           <br />
-          <span className="font-semibold text-base">今いるworkspaceの中身。エディタやAIエージェント等のタブが並ぶ</span>
+          <span className="font-semibold text-base">
+            今いるworkspaceの中身。エディタやAIエージェント等のタブが並ぶ
+          </span>
         </p>
         <p className="flex-1 text-end">
           <span className="font-bold text-accent">右 — workspace一覧</span>

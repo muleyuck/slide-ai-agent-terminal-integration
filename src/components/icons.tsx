@@ -56,15 +56,17 @@ export function AvatarBubble({
 }) {
   return (
     <div className="relative">
-      <div className={`flex ${size} items-center justify-center rounded-full bg-accent text-surface`}>
+      <div
+        className={`flex ${size} items-center justify-center rounded-full bg-accent text-surface`}
+      >
         <UserIcon className={iconSize} />
       </div>
-      <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-base font-bold whitespace-nowrap text-muted">
+      <span className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap font-bold text-base text-muted">
         自分
       </span>
       {/* 吹き出し */}
-      <span className="absolute top-full left-1/2 mt-4 -translate-x-1/2 rounded-sm border border-code bg-surface px-3 py-1 text-lg font-bold whitespace-nowrap text-code">
-        <span className="absolute -top-[7px] left-1/2 size-3 -translate-x-1/2 rotate-45 border-t border-l border-code bg-surface" />
+      <span className="absolute top-full left-1/2 mt-4 -translate-x-1/2 whitespace-nowrap rounded-sm border border-code bg-surface px-3 py-1 font-bold text-code text-lg">
+        <span className="absolute -top-[7px] left-1/2 size-3 -translate-x-1/2 rotate-45 border-code border-t border-l bg-surface" />
         {label}
       </span>
     </div>

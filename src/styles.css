@@ -34,13 +34,9 @@
   --color-inverted-ink: #e5e9f0;
   /* nord5 */
 
-  --font-mono:
-    "HackGen Console NF", "Symbols Nerd Font", ui-monospace, SFMono-Regular,
-    monospace;
+  --font-mono: "HackGen Console NF", "Symbols Nerd Font", ui-monospace, SFMono-Regular, monospace;
 
-  --font-sans:
-    system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans JP",
-    sans-serif;
+  --font-sans: system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif;
 }
 
 /* flow-slide-engine 側の変数 */

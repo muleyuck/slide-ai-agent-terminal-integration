@@ -22,14 +22,14 @@ export function ConclusionSlide(props: SlideProps) {
       <Kicker>Environment ／ 今の構成</Kicker>
       <Title className="font-bold text-accent-strong">【結論】見直したターミナル環境</Title>
 
-      <div className="pt-10 flex items-start justify-center gap-6">
+      <div className="flex items-start justify-center gap-6 pt-10">
         {STACK.map((s, i) => (
           <div key={s.name} className="flex items-start gap-6">
-            {i > 0 && <p className="pt-8 text-3xl font-bold text-muted">+</p>}
+            {i > 0 && <p className="pt-8 font-bold text-3xl text-muted">+</p>}
             <div className="w-64 text-center">
               <img src={asset(s.file)} alt={s.name} className="mx-auto size-24 object-contain" />
-              <p className="mt-3 text-2xl font-bold text-ink">{s.name}</p>
-              <p className="mt-1 text-base leading-snug text-muted font-semibold">{s.role}</p>
+              <p className="mt-3 font-bold text-2xl text-ink">{s.name}</p>
+              <p className="mt-1 font-semibold text-base text-muted leading-snug">{s.role}</p>
             </div>
           </div>
         ))}
@@ -37,7 +37,7 @@ export function ConclusionSlide(props: SlideProps) {
 
       <Step className="mt-6">
         {/* 下の 2 つが原因で、上の構成がその結果だと矢印の向きで示す。 */}
-        <p className="flex items-center justify-center gap-2 text-lg leading-none font-bold text-accent">
+        <p className="flex items-center justify-center gap-2 font-bold text-accent text-lg leading-none">
           <span className="text-base">▲</span>
           この2つを満たすための構成
         </p>
@@ -45,10 +45,10 @@ export function ConclusionSlide(props: SlideProps) {
           {WANTS.map((w) => (
             <div
               key={w.label}
-              className="flex-1 flex flex-col items-center gap-4 rounded-sm border border-line px-6 py-4"
+              className="flex flex-1 flex-col items-center gap-4 rounded-sm border border-line px-6 py-4"
             >
-              <p className="shrink-0 text-2xl font-bold text-accent">{w.label}</p>
-              <p className="text-xl leading-snug font-bold text-ink">{w.text}</p>
+              <p className="shrink-0 font-bold text-2xl text-accent">{w.label}</p>
+              <p className="font-bold text-ink text-xl leading-snug">{w.text}</p>
             </div>
           ))}
         </div>
@@ -63,7 +63,7 @@ export function ConclusionSlide(props: SlideProps) {
       </Step>
 
       {/* CC BY 3.0 の Neovim ロゴはクレジットが必須。本文とは無関係のためスライド左下端で視線から外す。 */}
-      <p className="absolute right-32 bottom-5 left-12 text-xs text-muted/60">
+      <p className="absolute right-32 bottom-5 left-12 text-muted/60 text-xs">
         ghostty (MIT, © Mitchell Hashimoto and Ghostty contributors) ／ herdr (© Herdr, Inc.) ／
         Neovim logo by Jason Long, CC BY 3.0 ／ 各ロゴは各権利者に帰属します
       </p>

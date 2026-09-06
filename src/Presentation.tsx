@@ -1,14 +1,13 @@
 import { Deck } from "flow-slide-engine"
-
-import { TitleSlide } from "./slides/TitleSlide"
 import { AboutMeSlide } from "./slides/AboutMeSlide"
-import { ConclusionSlide } from "./slides/ConclusionSlide"
-import { Requirement1Slide } from "./slides/Requirement1Slide"
-import { HistorySlide } from "./slides/HistorySlide"
-import { CurrentSetupSlide } from "./slides/CurrentSetupSlide"
-import { Requirement2Slide } from "./slides/Requirement2Slide"
 import { AgentDashboardSlide } from "./slides/AgentDashboardSlide"
+import { ConclusionSlide } from "./slides/ConclusionSlide"
+import { CurrentSetupSlide } from "./slides/CurrentSetupSlide"
+import { HistorySlide } from "./slides/HistorySlide"
+import { Requirement1Slide } from "./slides/Requirement1Slide"
+import { Requirement2Slide } from "./slides/Requirement2Slide"
 import { SummarySlide } from "./slides/SummarySlide"
+import { TitleSlide } from "./slides/TitleSlide"
 
 export function Presentation() {
   return (
