@@ -7,7 +7,7 @@ export function SummarySlide(props: SlideProps) {
     <CoverSlide {...props} cover="close" label="Takeaways ／ まとめ" iconSize="size-24">
       <Title className="mb-8 font-bold text-surface">求めたのは一覧性とカスタマイズ性</Title>
       <ul className="list-disc pl-6 text-xl leading-loose marker:text-surface/60">
-        <li>AI以前・・・プロジェクトを束ねて、1キーで飛んで、今どこにいるかが常に見える ／ 要求① </li>
+        <li>AI以前・・・プロジェクトを束ねて、一発で飛んで、今どこにいるかが常に見える ／ 要求① </li>
         <li>AI以後・・・動いているエージェントの状況が一覧で見える ／ 要求② </li>
       </ul>
       <span className="text-surface/60 text-base mt-4">

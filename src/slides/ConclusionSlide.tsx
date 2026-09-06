@@ -27,11 +27,7 @@ export function ConclusionSlide(props: SlideProps) {
           <div key={s.name} className="flex items-start gap-6">
             {i > 0 && <p className="pt-8 text-3xl font-bold text-muted">+</p>}
             <div className="w-64 text-center">
-              <img
-                src={asset(s.file)}
-                alt={s.name}
-                className="mx-auto size-24 object-contain"
-              />
+              <img src={asset(s.file)} alt={s.name} className="mx-auto size-24 object-contain" />
               <p className="mt-3 text-2xl font-bold text-ink">{s.name}</p>
               <p className="mt-1 text-base leading-snug text-muted font-semibold">{s.role}</p>
             </div>
@@ -39,31 +35,37 @@ export function ConclusionSlide(props: SlideProps) {
         ))}
       </div>
 
-      {/* TODO: 下の要求を達成するために上記の構成になったのが伝わるアイコンか何らかの表示を入れる. スライド縦幅を超えない程度 */}
-      <Step className="mt-10 flex items-center gap-3">
-        {WANTS.map((w) => (
-          <div key={w.label} className="flex-1 flex flex-col items-center gap-4 rounded-sm border border-line px-6 py-4">
-            <p className="shrink-0 text-2xl font-bold text-accent">{w.label}</p>
-            <p className="text-xl leading-snug font-bold text-ink">{w.text}</p>
-          </div>
-        ))}
+      <Step className="mt-6">
+        {/* 下の 2 つが原因で、上の構成がその結果だと矢印の向きで示す。 */}
+        <p className="flex items-center justify-center gap-2 text-lg leading-none font-bold text-accent">
+          <span className="text-base">▲</span>
+          この2つを満たすための構成
+        </p>
+        <div className="mt-3 flex items-center gap-3">
+          {WANTS.map((w) => (
+            <div
+              key={w.label}
+              className="flex-1 flex flex-col items-center gap-4 rounded-sm border border-line px-6 py-4"
+            >
+              <p className="shrink-0 text-2xl font-bold text-accent">{w.label}</p>
+              <p className="text-xl leading-snug font-bold text-ink">{w.text}</p>
+            </div>
+          ))}
+        </div>
       </Step>
 
       <Step>
         <Takeaway className="mt-16">
           <span className="font-semibold text-accent-strong">
             2つの要求を達成するために行った対応とその変遷をこれから話します。
-            まずは要求① →
           </span>
         </Takeaway>
       </Step>
 
       {/* CC BY 3.0 の Neovim ロゴはクレジットが必須。本文とは無関係のためスライド左下端で視線から外す。 */}
       <p className="absolute right-32 bottom-5 left-12 text-xs text-muted/60">
-        ghostty (MIT, © Mitchell Hashimoto and Ghostty contributors) ／
-        herdr (© Herdr, Inc.) ／
-        Neovim logo by Jason Long, CC BY 3.0 ／
-        各ロゴは各権利者に帰属します
+        ghostty (MIT, © Mitchell Hashimoto and Ghostty contributors) ／ herdr (© Herdr, Inc.) ／
+        Neovim logo by Jason Long, CC BY 3.0 ／ 各ロゴは各権利者に帰属します
       </p>
     </Slide>
   )

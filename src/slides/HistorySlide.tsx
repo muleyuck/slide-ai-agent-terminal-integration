@@ -9,27 +9,20 @@ type Stop = {
   date: string
   /** 本流に残らなかったツール */
   abandoned?: boolean
+  /**
+   * 次の構成へ乗り換えた理由。線の上、区間の中心に出す。最後の構成は持たない。
+   * 自動折り返しに任せると「プロジェ / クト」のように語の途中で割れるので、
+   * 意味の切れ目で 2 行に分けて持つ。
+   */
+  move?: [string, string]
 }
 
-// TODO: MOVESをここにまとめて1回のループに
 const HISTORY: Stop[] = [
-  { tool: "ghostty + tmux", date: "〜2026.03" },
-  { tool: "cmux", date: "2026.03", abandoned: true },
-  { tool: "ghostty + tmux", date: "に戻る" },
-  { tool: "WezTerm", date: "2026.07", abandoned: true },
+  { tool: "ghostty + tmux", date: "〜2026.03", move: ["cmuxで全部できると", "期待して移行した"] },
+  { tool: "cmux", date: "2026.03", abandoned: true, move: ["サイドバー固定で", "自分好みのUI/UXにできない"] },
+  { tool: "ghostty + tmux", date: "に戻る", move: ["tmux無しで", "プロジェクトを束ねたい"] },
+  { tool: "WezTerm", date: "2026.07", abandoned: true, move: ["複数セッションが動き", "エージェントの一覧が欲しい"] },
   { tool: "ghostty + herdr", date: "2026.08〜" },
-]
-
-/**
- * 変更点の間に記載する乗り換えた理由。
- * 自動折り返しに任せると「プロジェ / クト」のように語の途中で割れるので、
- * 意味の切れ目で 2 行に分けて持つ。
- */
-const MOVES: [string, string][] = [
-  ["cmuxで全部できると", "期待して移行した"],
-  ["サイドバー固定で", "自分好みのUI/UXにできない"],
-  ["tmux無しで", "プロジェクトを束ねたい"],
-  ["複数セッションが動き", "エージェントの一覧が欲しい"],
 ]
 
 export function HistorySlide(props: SlideProps) {
@@ -42,7 +35,7 @@ export function HistorySlide(props: SlideProps) {
 
       {/* 理由は線の上。5 点を 10% ずつ内側に寄せると、4 つの区間の中心に並ぶ。 */}
       <div className="flex items-end px-[9%] pt-14">
-        {MOVES.map(([head, tail]) => (
+        {HISTORY.flatMap((s) => (s.move ? [s.move] : [])).map(([head, tail]) => (
           <div key={head} className="flex flex-1 flex-col items-center">
             <p className="text-center text-lg leading-snug font-bold text-accent-strong">
               {head}
@@ -56,8 +49,11 @@ export function HistorySlide(props: SlideProps) {
 
       {/* 履歴の本流。連結線は size-7 の丸の中心 (top-3.5) に -translate-y-1/2 で乗せる。 */}
       <div className="relative mt-1">
-        {/* TODO: 右向きの矢じりをつける */}
-        <div className="absolute inset-x-0 top-3.5 h-1.5 -translate-y-1/2 bg-accent" />
+        {/* 右端の矢じりで、線が時間の流れであることを出す。 */}
+        <div className="absolute inset-x-0 top-3.5 flex -translate-y-1/2 items-center">
+          <div className="h-1.5 flex-1 bg-accent" />
+          <span className="block size-0 border-y-[9px] border-l-[14px] border-y-transparent border-l-accent" />
+        </div>
         <div className="flex items-start">
           {HISTORY.map((s, i) => (
             <div key={`${s.tool}${i}`} className="flex flex-1 flex-col items-center">

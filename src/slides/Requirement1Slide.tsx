@@ -67,10 +67,9 @@ function Workspace({ name, sessions }: { name: string; sessions: [string, string
   )
 }
 
-// TODO: 1キーという呼称が適切か？
 const REQUIREMENT1_WANTS = [
   { no: "① ", title: "プロジェクト単位に束ねる", text: "ディレクトリを固定したセッションをまとめたい" },
-  { no: "② ", title: "1キーで飛ぶ", text: "エディタとAIを1日に何十回も往復する" },
+  { no: "② ", title: "一発で飛ぶ", text: "エディタとAIを1日に何十回も往復する" },
   { no: "③ ", title: "今どこにいるかが一目で分かる", text: "束ねた分だけ、自分の居場所を見失う" },
 ]
 
@@ -110,7 +109,7 @@ export function Requirement1Slide(props: SlideProps) {
               <div className="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 bg-accent" />
               <span className="absolute top-1/2 -right-1 -translate-y-1/2 text-sm leading-none text-accent">▶</span>
               <span className="absolute bottom-1/2 left-1/2 mb-2 -translate-x-1/2 rounded-sm bg-muted px-2 py-0.5 font-mono text-sm whitespace-nowrap text-inverted-ink">
-                1キー
+                一発
               </span>
             </div>
           ))}
