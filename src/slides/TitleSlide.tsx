@@ -10,7 +10,7 @@ export function TitleSlide(props: SlideProps) {
         <br />
         ターミナル環境を見直した話
       </Title>
-      <p className="mt-8 text-xl leading-relaxed opacity-90">muleyuck ／ 2026-09-08</p>
+      <p className="mt-8 text-xl leading-relaxed opacity-90">大塚 拓人 ／ 2026-09-08</p>
     </CoverSlide>
   )
 }
