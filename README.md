@@ -49,9 +49,6 @@ pnpm dev
 <kbd>P</kbd> で1ページ1枚の印刷、<kbd>Esc</kbd> で発表表示に戻る。
 現在位置は URL の `#/present/{スライド}/{ステップ}` に出るので、途中から開ける。
 
-スライドエンジンは [flow-slide-engine](https://github.com/muleyuck/flow-slide-engine)。
-モードや段階表示の仕様はそちらの README が持っている。
-
 ## クレジット
 
 スライドに出てくるロゴは各権利者に帰属する。
